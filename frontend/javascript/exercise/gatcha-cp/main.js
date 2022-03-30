@@ -14,19 +14,19 @@
 
 function gatcha(button) {
   if(button ===1){
-      console.log("coba lagi")
+      return "coba lagi"
   }
   else if(button === 2){
-      console.log("selamat kamu mendapatkan kupon sebanyak 5")
+      return "selamat kamu mendapatkan kupon sebanyak 5"
   }
   else if(button === 3){
-      console.log("selamat kamu mendapatkan kupon sebanyak 15")
+      return "selamat kamu mendapatkan kupon sebanyak 15"
   }
   else if(button == 4){
-      console.log("selamat kamu mendapatkan kupon sebanyak 50")
+      return "selamat kamu mendapatkan kupon sebanyak 50"
   }
   else if(button === 5){
-      console.log("selamat kamu mendapatkan kupon sebanyak 100")
+      "selamat kamu mendapatkan kupon sebanyak 100"
   }
 }
 
