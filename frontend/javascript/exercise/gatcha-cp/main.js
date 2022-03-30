@@ -13,20 +13,22 @@
 // TODO: answer here
 
 function gatcha(button) {
-  if(button ===1){
-      console.log("coba lagi")
-  }
-  else if(button === 2){
-      console.log("selamat kamu mendapatkan kupon sebanyak 5")
-  }
-  else if(button === 3){
-      console.log("selamat kamu mendapatkan kupon sebanyak 15")
-  }
-  else if(button == 4){
-      console.log("selamat kamu mendapatkan kupon sebanyak 50")
-  }
-  else if(button === 5){
-      console.log("selamat kamu mendapatkan kupon sebanyak 100")
+  switch(button){
+    case 1:
+        return "coba lagi";
+        break;
+    case 2:
+        return "selamat kamu mendapatkan kupon sebanyak 5";
+        break;
+    case 3:
+        return "selamat kamu mendapatkan kupon sebanyak 15";
+        break;
+    case 4:
+        return "selamat kamu mendapatkan kupon sebanyak 50";
+        break;
+    case 5:
+        return "selamat kamu mendapatkan kupon sebanyak 100";
+        break;
   }
 }
 
@@ -36,4 +38,4 @@ var button = Math.floor(Math.random()*5)+1;
 
 console.log(gatcha(button))
 
-module.exports = gatcha
+module.exports = gatcha;
