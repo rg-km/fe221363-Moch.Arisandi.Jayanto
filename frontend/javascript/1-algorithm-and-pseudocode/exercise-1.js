@@ -9,13 +9,15 @@
 
 // ```
 // 1. Masukan nilai panjang
-var panjang = parseInt(prompt("Masukkan Panjang: "));
+// const panjang = 2;
+const panjang = parseInt(prompt("Masukkan Panjang: "));
 // 2. Masukan nilai lebar
-var lebar = parseInt(prompt("Masukkan Lebar: "));
+// const lebar = 3;
+const lebar = parseInt(prompt("Masukkan Lebar: "));
 // 3. Rumus untuk menghitung L  yaitu L= p * l
-var Luas = panjang*lebar
+const Luas = panjang*lebar
 // 4. Nilai  L (Luas) akan dicetak sebagai output ke perangkat output (keluaran)
-console.log(Luas);
+console.log(Luas)
 // ```
 
 
