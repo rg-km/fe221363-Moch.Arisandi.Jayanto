@@ -13,23 +13,25 @@
 // TODO: answer here
 
 function gatcha(button) {
-  switch(button){
-    case 1:
-        return "coba lagi";
-        break;
-    case 2:
-        return "selamat kamu mendapatkan kupon sebanyak 5";
-        break;
-    case 3:
-        return "selamat kamu mendapatkan kupon sebanyak 15";
-        break;
-    case 4:
-        return "selamat kamu mendapatkan kupon sebanyak 50";
-        break;
-    case 5:
-        return "selamat kamu mendapatkan kupon sebanyak 100";
-        break;
-  }
+    switch(button){
+        case 1:
+            return "coba lagi";
+            break;
+        case 2:
+            return "selamat kamu mendapatkan kupon sebanyak 5";
+            break;
+        case 3:
+            return "selamat kamu mendapatkan kupon sebanyak 15";
+            break;
+        case 4:
+            return "selamat kamu mendapatkan kupon sebanyak 50";
+            break;
+        case 5:
+            return "selamat kamu mendapatkan kupon sebanyak 100";
+            break;
+        default:
+            return "eror"
+    }
 }
 
 // Create variable button here
