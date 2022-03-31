@@ -12,6 +12,7 @@
     "jest": "^27.5.1"
   },
   "dependencies": {
-    "prompt": "^1.2.2"
+    "prompt": "^1.2.2",
+    "prompt-sync": "^4.2.0"
   }
 }
