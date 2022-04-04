@@ -13,7 +13,19 @@
 
 function birthdayCakeCandles(candles) {
   // Write your code here
-	// TODO: answer here
+  let tallestCandles = candles[0];
+  let tallestCandlesCount = 0;
+  for (i = 0; i < candles.length; i++) {
+    // Cari candle tertinggi
+    if (candles[i] > tallestCandles) {
+      tallestCandles = candles[i];
+      tallestCandlesCount = 1;
+    } else if (candles[i] === tallestCandles) {
+      tallestCandlesCount++;
+    }
+  }
+  // TODO: answer here
+  return tallestCandlesCount;
 }
 
 function main() {
