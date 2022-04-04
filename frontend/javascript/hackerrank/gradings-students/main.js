@@ -13,18 +13,32 @@
 
 function gradingStudents(grades) {
   // Write your code here
-  // TODO: answer here
+let result = [];
+for (let i = 0; i < grades.length; i++) {
+  if (grades[i] < 38) {
+    result.push(grades[i]);
+  } else {
+    let nextMultiple = Math.ceil(grades[i] / 5) * 5;
+    if (nextMultiple - grades[i] < 3) {
+      result.push(nextMultiple);
+    } else {
+      result.push(grades[i]);
+    }
+  }
+}
+// TODO: answer here
+return result;
 }
 
 function main() {
-  //     var n = parseInt(readLine());
-  //     var grades = [];
-  //     for(var grades_i = 0; grades_i < n; grades_i++){
-  //        grades[grades_i] = parseInt(readLine());
-  //     }
-  var grades = [73, 67, 38, 33]; // override input
-  var result = gradingStudents(grades);
-  console.log(result.join("\n"));
+//     var n = parseInt(readLine());
+//     var grades = [];
+//     for(var grades_i = 0; grades_i < n; grades_i++){
+//        grades[grades_i] = parseInt(readLine());
+//     }
+var grades = [73, 67, 38, 33]; // override input
+var result = gradingStudents(grades);
+console.log(result.join("\n"));
 }
 
 main(); // execute program
