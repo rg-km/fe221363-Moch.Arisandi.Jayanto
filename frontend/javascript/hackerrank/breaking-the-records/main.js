@@ -14,19 +14,33 @@
 
 function breakingRecords(scores) {
   // Write your code here
-  // TODO: answer here
-}
-
-function main() {
-  //     var n = parseInt(readLine());
-  //     s = readLine().split(' ');
-  //     s = s.map(Number);
-  var scores = [10, 5, 20, 20, 4, 5, 2, 25, 1]; // override input
-  var result = breakingRecords(scores);
-  console.log(result.join(' ') + '\n')
-
-}
-
-main(); // execute program
-
-module.exports = breakingRecords
+    let max = scores[0];
+    let min = scores[0];
+    let maxCount = 0;
+    let minCount = 0;
+    for (let i = 0; i < scores.length; i++) {
+      if (scores[i] > max) {
+        max = scores[i];
+        maxCount++;
+      } else if (scores[i] < min) {
+        min = scores[i];
+        minCount++;
+      }
+    }
+    // TODO: answer here
+    return [maxCount, minCount];
+  }
+  
+  function main() {
+    //     var n = parseInt(readLine());
+    //     s = readLine().split(' ');
+    //     s = s.map(Number);
+    var scores = [10, 5, 20, 20, 4, 5, 2, 25, 1]; // override input
+    var result = breakingRecords(scores);
+    console.log(result.join(' ') + '\n')
+  
+  }
+  
+  main(); // execute program
+  
+  module.exports = breakingRecords
