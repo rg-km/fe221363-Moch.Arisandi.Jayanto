@@ -14,10 +14,16 @@
 function aVeryBigSum(ar) {
   // Complete this function
   // TODO: answer here
+  let sumNum = 0;
+  for (var i = 0; i < ar.length; i++){
+      sumNum += ar[i];
+  }
+  return sumNum;
 }
 
 function main() {
   var ar = [1000000001, 1000000002, 1000000003, 1000000004, 1000000005]; // override input
+  
   var result = aVeryBigSum(ar);
   console.log(result);
 }
