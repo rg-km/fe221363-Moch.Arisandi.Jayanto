@@ -12,7 +12,18 @@
 
 function miniMaxSum(arr) {
   // Write your code here
+  arrSort = arr.sort()
+  let min = 0
+  let max = 0
+
+  for (var i = 0; i<arr.length-1; i++){
+    min += arrSort[i]
+  }
+  for (var j = 1; j<arr.length; j++){
+    max += arrSort[j]
+  }
   // TODO: answer here
+  return (min+" "+max)
 }
 
 function main() {
