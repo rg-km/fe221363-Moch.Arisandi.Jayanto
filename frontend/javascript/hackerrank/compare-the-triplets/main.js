@@ -17,11 +17,23 @@
 function compareTriplets(a, b) {
   // Write your code here
   // TODO: answer here
+// Write your code here
+  let result = [0, 0]
+  for (let i = 0; i < a.length; i++) {
+    if (a[i] > b[i]) {
+      result[0]++;
+    } else if (a[i] < b[i]) {
+      result[1]++;
+    }
+  }
+  // TODO: answer here
+  return result;
 }
 function main() {
 
   const a = [5, 6, 7] // override input
   const b = [3, 6, 10] // override input
+
 
   const result = compareTriplets(a, b);
 
