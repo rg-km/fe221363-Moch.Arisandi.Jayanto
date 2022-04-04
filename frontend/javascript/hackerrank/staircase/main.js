@@ -12,6 +12,19 @@
 
 function staircase(n) {
   // Write your code here
+  let result = '';
+  for (let i = 0; i < n; i++) {
+    let spaces = n - i - 1;
+    let hashes = i + 1;
+    for (let j = 0; j < spaces; j++) {
+      result += ' ';
+    }
+    for (let k = 0; k < hashes; k++) {
+      result += '#';
+    }
+    result += '\n';
+  }
+  return result;
   // TODO: answer here
 }
 
