@@ -8,6 +8,13 @@
  */
 
 const lowerToUpperMap = (array) => {
+  let result = [];
+  for (let i = 0; i < array.length; i++) {
+    result.push({
+      [array[i]]: array[i].toUpperCase()
+    });
+  }
+  return result;
   // TODO: answer here
 };
 
