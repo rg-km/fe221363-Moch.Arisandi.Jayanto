@@ -16,6 +16,15 @@
 
 const findAnimal = (bush) => {
   // TODO: answer here
+  let upper = bush.toUpperCase();
+  let animal = "";
+  for (var i in bush) {
+    upper[i] !== bush[i] ? animal += bush[i] : "";
+  }
+  return animal;
 };
+
+const a = findAnimal("UkUNFYGaFYFYmTNUHbJKHJJiOKDJKDnKFKFLgLLF");
+console.log(a);
 
 module.exports = findAnimal
