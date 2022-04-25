@@ -9,6 +9,9 @@
 
 const maxFromArray = (numbers) => {
   // TODO: answer here
+  const max = numbers.reduce((a, b) => {
+    return a > b ? a : b;
+  });
   return max;
 };
 
