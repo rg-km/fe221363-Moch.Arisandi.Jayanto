@@ -4,11 +4,23 @@
 // contoh: hehe => hheehhee
 function doubleChars(str) {
   // TODO: answer here
+  return str
+  .split('')
+  .map(function(char) {
+    return char + char;
+  })
+  .join('');
 }
 
 // function ini mengulang pengaplikasian callback pada str sejumlah num
 function repeat(str, num, cb) {
   // TODO: answer here
+  let result = str;
+
+  for (let i = 0; i < num; i++) {
+    result = cb(result);
+  }
+  return result;
 }
 
 console.log(repeat("triple", 2, doubleChars)); //  ttttrrrriiiipppplllleeee
