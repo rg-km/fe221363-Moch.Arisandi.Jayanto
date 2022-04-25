@@ -8,6 +8,14 @@
 
 const countRepetition = (numbers) => {
   // TODO: answer here
+  let repetition = {};
+  for (let i in numbers) {
+    if (repetition[numbers[i]]) {
+      repetition[numbers[i]] += 1;
+    } else {
+      repetition[numbers[i]] = 1;
+    }
+  }
   return repetition;
 };
 
