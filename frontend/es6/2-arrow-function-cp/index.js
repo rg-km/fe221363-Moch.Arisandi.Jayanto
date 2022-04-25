@@ -15,6 +15,17 @@
  */
 
 // TODO: answer here
+multiplyByTwo = (n) => {
+  return n * 2;
+}
+
+multiply = (x, y) => {
+  return x * y;
+}
+
+returnTheTwo = () => {
+  return 2;
+}
 
 module.exports = {
   multiplyByTwo,
