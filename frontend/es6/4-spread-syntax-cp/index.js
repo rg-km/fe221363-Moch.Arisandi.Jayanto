@@ -8,6 +8,13 @@
  * Dilarang menggunakan Math.max
  */
 const max = (...args) => {
+  let max = args[0];
+  for (let i = 0; i < args.length; i++) {
+    if (args[i] > max) {
+      max = args[i];
+    }
+  }
+  return max;
   // TODO: answer here
 };
 
