@@ -13,6 +13,15 @@
 
 const checkOmnipresent = (array, valueToFind) => {
   // TODO: answer here
+  const result = [];
+  for (let i in array) {
+    for (let j in array[i]) {
+      if (array[i][j] === valueToFind) {
+        result.push(true);
+      }
+    }
+  }
+  return result.length > 1 ? true : false;
 };
 
 module.exports = checkOmnipresent
