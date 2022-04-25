@@ -48,12 +48,18 @@ const input = [
 ];
 
 const isOdd = (data) => {
-  // TODO: answer here
+  const year = data.year;
+  return year % 2 === 1;
 };
 
 const groupBy = (array, callback) => array.reduce(
   (accumulator, dataValue) => {
-    // TODO: answer here
+    const key = callback(dataValue);
+    if (!accumulator[key]) {
+      accumulator[key] = [];
+    }
+    accumulator[key].push(dataValue);
+    return accumulator;
   }, {}
 );
 
