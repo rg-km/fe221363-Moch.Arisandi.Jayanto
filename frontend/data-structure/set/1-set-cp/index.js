@@ -13,16 +13,25 @@
 
 
 function intersection(setA, setB) {
-    let result = new Set();
-    return result; // TODO: replace this
+    const setUnion = new Set();
+    for (let elem of setB) {
+      if (setA.has(elem)) {
+        setUnion.add(elem);
+      }
+    }
+   
+    return setUnion;
 }
-
-let setA = new Set(["Java", "Python", "Javascript", "C ++", "C#"]);
-let setB = new Set(["Java", "Python"]);
-console.log(intersection(setA, setB)); // {"Java", "Python"}
-
-setA = new Set("Java", "Python");
-setB = new Set("Swift");
-console.log(intersection(setA, setB)); // {}
+   
+function tambah(a, b) {
+    return a + b;
+}
+   
+console.log(tambah(2, 5));
+   
+let setA = new Set(["java", "python", "javascript", "c++", "c#"]);
+let setB = new Set(["Swift", "Java", "Kotlin", "Python"]);
+   
+console.log(intersection(setA, setB));
 
 module.exports = { intersection };
