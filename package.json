@@ -19,8 +19,12 @@
     "jest": "^27.5.1"
   },
   "dependencies": {
+<<<<<<< HEAD
     "playwright": "^1.21.1",
     "prompt": "^1.2.2",
     "prompt-sync": "^4.2.0"
+=======
+    "axios": "^0.27.1"
+>>>>>>> 9e799c5c7a40d8f37eb2595556630c4cb7439326
   }
 }
