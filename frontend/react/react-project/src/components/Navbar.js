@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react"
 import React from "react"
-
-import { getSession } from "../api/auth"
+import {  getSession, auth } from "../api/auth"
 import { useContext } from "react"
 import { SessionContext } from "../context/SessionContext"
 import {
@@ -36,27 +35,31 @@ import {
   ChevronRightIcon,
   InfoOutlineIcon,
 } from '@chakra-ui/icons';
+import {BsPlusSquare} from "react-icons/bs";
 
 export default function Navbar() {
   // TODO: answer here
+  const {session, setSession} = useContext(SessionContext)
+  const [user, setUser] = useState({})
   const { isOpen, onToggle } = useDisclosure()
-  const [user, setUser] = useState({
-    email: '',
-    id: '',
-    image: '',
-    name: '',
-  })
-
-  // getSession().then(response => {
-  //   const {data} = response
-  //   const newUser = {
-  //     ...data.user
-  //   }
-  //   setUser(newUser)
-  // })
-
-  console.log('hello')
-
+  useEffect(() => {
+    fetchUser()
+  }, [])
+  
+  const fetchUser = async () => {
+    try {
+      const response = await getSession()
+      const {data} = response
+      if (data.user) {
+        setSession(data.user)
+        setUser(data.user)
+      }
+      else window.location.assign('http://localhost:3000/login')
+    }
+    catch(error) {
+      console.log(error)
+    }
+  }
   return (
     <Box 
       bg={useColorModeValue('white', 'gray.800')} 
@@ -109,6 +112,9 @@ export default function Navbar() {
             justify={'flex-end'}
             direction={'row'}
             spacing={6}>
+            <Box>
+              <IconButton icon={<Icon as={BsPlusSquare} boxSize='24px'/>} variant='ghost'/>
+            </Box>
             <Menu>
               <MenuButton>
                 <Avatar src={user.image} size='sm'/>
@@ -116,7 +122,7 @@ export default function Navbar() {
               <MenuList>
                 <MenuItem icon={<InfoOutlineIcon />}>Profile</MenuItem>
                 <Divider />
-                <MenuItem>Logout</MenuItem>
+                <MenuItem onClick={auth}>Logout</MenuItem>
               </MenuList>
             </Menu>
           </Stack>
