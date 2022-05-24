@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import React from "react"
 import {  getSession, auth } from "../api/auth"
+import { Link } from "react-router-dom"
 import { useContext } from "react"
 import { SessionContext } from "../context/SessionContext"
 import {
@@ -12,7 +13,6 @@ import {
   Stack,
   Collapse,
   Icon,
-  Link,
   Popover,
   PopoverTrigger,
   PopoverContent,
@@ -88,7 +88,7 @@ export default function Navbar() {
             />
           </Flex>
           <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
-            <Link href="/" style={{textDecoration: 'none'}}>
+            <Link to="/" style={{textDecoration: 'none'}}>
               <Flex gap={2}>
                 <Image src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png" alt="Instagram" aria-label="App Logo" />
                 <Text
@@ -120,7 +120,9 @@ export default function Navbar() {
                 <Avatar src={user.image} size='sm'/>
               </MenuButton>
               <MenuList>
-                <MenuItem icon={<InfoOutlineIcon />}>Profile</MenuItem>
+                <Link to={`/profile/${session.id}`} style={{display: 'inline-block'}}>
+                  <MenuItem icon={<InfoOutlineIcon />}>Profile</MenuItem>
+                </Link>
                 <Divider />
                 <MenuItem onClick={auth}>Logout</MenuItem>
               </MenuList>

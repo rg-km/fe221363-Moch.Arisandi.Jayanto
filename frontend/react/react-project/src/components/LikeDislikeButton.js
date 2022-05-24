@@ -15,13 +15,12 @@ export default function LikeDislikeButton({id, isLiked, isDisliked, likeCount, d
             if (post.id === id) {
             post.liked = !post.liked
             if (post.liked) {
-                post.disliked = false
-                post.likeCount += 1 
                 if(post.disliked){
-                    post.liked = true
-                    post.likeCount += 1
+                    post.disliked = false
+                    
                     post.dislikeCount -= 1
                 }
+                post.likeCount += 1 
             } else {
                 post.likeCount -= 1
             }
@@ -45,13 +44,11 @@ export default function LikeDislikeButton({id, isLiked, isDisliked, likeCount, d
                 if (post.id === id) {
                 post.disliked = !post.disliked
                 if (post.disliked) {
-                    post.liked = false
-                    post.dislikeCount += 1 
                     if(post.liked){
-                        post.disliked = true
-                        post.dislikeCount += 1
+                        post.liked = false
                         post.likeCount -= 1
                     }
+                    post.dislikeCount += 1
                 } else {
                     post.dislikeCount -= 1
                 }
@@ -73,7 +70,7 @@ export default function LikeDislikeButton({id, isLiked, isDisliked, likeCount, d
         <Box p={3}>
             <Flex>
                 <IconButton onClick={() => setFillLike(id)} icon={(isLiked && !isDisliked) ? <Icon as={BsHandThumbsUpFill} boxSize={'24px'} color='blue.400'/> : <Icon as={BsHandThumbsUp} boxSize={'24px'} />} variant='ghost'/>
-                {/* <IconButton onClick={() => console.log('clicked like')} icon={(isLiked && !isDisliked) ? <Icon as={BsHandThumbsUpFill} boxSize={'24px'} color='blue.400'/> : <Icon as={BsHandThumbsUp} boxSize={'24px'} />} variant='ghost'/> */}
+
                 <IconButton onClick={() => setFillDislike(id)} icon={(!isLiked && isDisliked) ? <Icon as={BsHandThumbsDownFill} boxSize={'24px'} color='red.400'/> : <Icon as={BsHandThumbsDown} boxSize={'24px'} />} variant='ghost'/>
             </Flex>
         
