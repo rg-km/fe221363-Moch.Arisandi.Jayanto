@@ -15,13 +15,11 @@ export default function LikeDislikeButton({id, isLiked, isDisliked, likeCount, d
             if (post.id === id) {
             post.liked = !post.liked
             if (post.liked) {
-                post.disliked = false
-                post.likeCount += 1 
                 if(post.disliked){
-                    post.liked = true
-                    post.likeCount += 1
+                    post.disliked = false
                     post.dislikeCount -= 1
                 }
+                post.likeCount += 1 
             } else {
                 post.likeCount -= 1
             }
@@ -45,13 +43,11 @@ export default function LikeDislikeButton({id, isLiked, isDisliked, likeCount, d
                 if (post.id === id) {
                 post.disliked = !post.disliked
                 if (post.disliked) {
-                    post.liked = false
-                    post.dislikeCount += 1 
                     if(post.liked){
-                        post.disliked = true
-                        post.dislikeCount += 1
+                        post.liked = false
                         post.likeCount -= 1
                     }
+                    post.dislikeCount += 1
                 } else {
                     post.dislikeCount -= 1
                 }
@@ -79,7 +75,7 @@ export default function LikeDislikeButton({id, isLiked, isDisliked, likeCount, d
         
             <Flex>
                 <Text fontWeight={'bold'} fontSize={'14px'}>{likeCount} likes </Text>
-                <Text fontWeight={'bold'} fontSize={'14px'}>{dislikeCount} dislikes</Text>
+                <Text fontWeight={'bold'} fontSize={'14px'} marginLeft={'10px'}>{dislikeCount} dislikes</Text>
             </Flex>
         </Box>
     )
