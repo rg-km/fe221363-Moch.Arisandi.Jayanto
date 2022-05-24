@@ -26,9 +26,6 @@ export default function Profile(avatar) {
     }
     loadPost()
   },[id])
-  if ([]){
-    <h1>Hello</h1>
-  }
   return (
     <> 
     

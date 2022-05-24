@@ -20,8 +20,8 @@ root.render(
         <Routes>
           <Route path="/" element={<App />}>
             <Route index element={<MainMenu />} />
-            <Route path='/profile' element={<Outlet />} >
-              <Route path=':id' element={<Profile/>} />
+            <Route path='/profile' element={<Outlet />}>
+              <Route path=':id' element={<Profile />} />
             </Route>
           </Route>
           <Route path="login" element={<Login />}/>

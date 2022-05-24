@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react"
 import React from "react"
 import {  getSession, auth } from "../api/auth"
-import { Link } from "react-router-dom"
 import { useContext } from "react"
 import { SessionContext } from "../context/SessionContext"
 import {
@@ -27,6 +26,7 @@ import {
   Avatar,
   Divider,
   Image,
+  Modal,
 } from '@chakra-ui/react';
 import {
   HamburgerIcon,
@@ -35,13 +35,18 @@ import {
   ChevronRightIcon,
   InfoOutlineIcon,
 } from '@chakra-ui/icons';
+import { Link } from "react-router-dom"
 import {BsPlusSquare} from "react-icons/bs";
+import UploadForm from "./UploadForm"
+import axios from "axios"
+import Swal from "sweetalert2"
 
 export default function Navbar() {
   // TODO: answer here
   const {session, setSession} = useContext(SessionContext)
   const [user, setUser] = useState({})
   const { isOpen, onToggle } = useDisclosure()
+  const {isOpen:isOpenAdd, onOpen:onOpenAdd, onClose:onCloseAdd} = useDisclosure()
   useEffect(() => {
     fetchUser()
   }, [])
@@ -58,6 +63,29 @@ export default function Navbar() {
     }
     catch(error) {
       console.log(error)
+    }
+  }
+
+  const submitPost = async (caption, image) => {
+    try {
+      const formData = new FormData()
+      formData.append('content', caption)
+      formData.append('image', image)
+      const response = await axios.post('/post/create',formData)
+      
+      if (response.data.message === "success") {
+        Swal.fire({
+          title: 'Berhasil posting',
+          icon: 'success'
+        })
+      }
+    }
+    catch(error) {
+      Swal.fire({
+        title: 'Gagal posting',
+        text: 'Gagal membuat postingan',
+        icon: 'error'
+      })
     }
   }
   return (
@@ -113,14 +141,14 @@ export default function Navbar() {
             direction={'row'}
             spacing={6}>
             <Box>
-              <IconButton icon={<Icon as={BsPlusSquare} boxSize='24px'/>} variant='ghost'/>
+              <IconButton icon={<Icon as={BsPlusSquare} boxSize='24px'/>} variant='ghost' onClick={onOpenAdd}/>
             </Box>
             <Menu>
               <MenuButton>
                 <Avatar src={user.image} size='sm'/>
               </MenuButton>
               <MenuList>
-                <Link to={`/profile/${session.id}`} style={{display: 'inline-block'}}>
+                <Link to={`/profile/${session.id}`}>
                   <MenuItem icon={<InfoOutlineIcon />}>Profile</MenuItem>
                 </Link>
                 <Divider />
@@ -130,7 +158,11 @@ export default function Navbar() {
           </Stack>
         </Flex>
       </Container>
+      <Modal isOpen={isOpenAdd} onClose={onCloseAdd}>
+        <UploadForm onClose={onCloseAdd} onSubmit={submitPost}/>
+      </Modal>
     </Box>
+
     // <header className="navbar">
     //   <div className="container d-flex justify-content-between">
     //     <h1 aria-label="App Title" className="navbar-brand">Instagram Clone</h1>
