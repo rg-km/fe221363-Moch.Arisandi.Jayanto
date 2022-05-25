@@ -5,7 +5,7 @@
  * - Buatlah setter untuk masing masing Properti diatas dengan format `setName` untuk mengubah nilai nama, `setAge` untuk mengubah nilai usia, dan `setJob` untuk mengubah nilai pekerjaan dari class Person
  */
 
-class Person {
+ class Person {
   constructor(name, age, job) {
     this.name = name;
     this.age = age;
@@ -13,6 +13,24 @@ class Person {
   }
   
   // TODO: answer here
+  get getName() {
+    return this.name;
+  }
+  get getAge() {
+    return this.age;
+  }
+  get getJob() {
+    return this.job;
+  }
+  set setName(changedName) {
+    this.name = changedName;
+  }
+  set setAge(changedAge) {
+    this.age = changedAge;
+  }
+  set setJob(changedJob) {
+    this.job = changedJob;
+  }
 }
 
 module.exports = Person
