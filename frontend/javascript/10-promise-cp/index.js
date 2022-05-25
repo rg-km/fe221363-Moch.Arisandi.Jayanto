@@ -1,41 +1,35 @@
 /**
- * Fungsi requestStarWarsPeopleById, menggunakan teknik callback untuk mengembalikan datanya.
- * Ubahlah fungsi tersebut menjadi bentuk Promise.
- *
- * Catatan:
- * Sedikit penjelasan pada node.js untuk melakukan http request menggunakan module request,
- * oleh karena itu di sini kita menggunakan module https.
- *
+ * Pada soal kali ini disediakan class `Person` dimana kalian diminta untuk melengkapi serta membuat beberapa hal dibawah ini:
+ * - Class Person yang memiliki properti name, age, dan job
+ * - Buatlah getter untuk masing masing Properti diatas dengan format `getName` untuk mendapatkan nama, `getAge` untuk mendapatkan usia, dan `getJob` untuk mendapatkan pekerjaan dari class Person.
+ * - Buatlah setter untuk masing masing Properti diatas dengan format `setName` untuk mengubah nilai nama, `setAge` untuk mengubah nilai usia, dan `setJob` untuk mengubah nilai pekerjaan dari class Person
  */
-const https = require("https");
 
-function requestStarWarsPeopleById(peopleId, onReturn, onError) {
-  https
-    .get("https://swapi.dev/api/people/" + peopleId, (res) => {
-      let result = "";
-
-      if (res.statusCode !== 200) {
-        onError(new Error(res.statusCode));
-      }
-
-      res.on("data", (d) => {
-        result += d;
-      });
-
-      res.on("end", () => {
-        onReturn(JSON.parse(result));
-      });
-    })
-    .on("error", (e) => {
-      onError(e);
-    });
-}
-
-function promiseStarWarsPeopleById(peopleId) {
+ class Person {
+  constructor(name, age, job) {
+    this.name = name;
+    this.age = age;
+    this.job = job;
+  }
   // TODO: answer here
+  get getName() {
+    return this.name;
+  }
+  get getAge() {
+    return this.age;
+  }
+  get getJob() {
+    return this.job;
+  }
+  set setName(changedName) {
+    this.name = changedName;
+  }
+  set setAge(changedAge) {
+    this.age = changedAge;
+  }
+  set setJob(changedJob) {
+    this.job = changedJob;
+  }
 }
 
-module.exports = {
-  promiseStarWarsPeopleById,
-  requestStarWarsPeopleById,
-};
+module.exports = Person
