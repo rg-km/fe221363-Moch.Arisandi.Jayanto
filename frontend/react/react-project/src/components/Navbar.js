@@ -116,7 +116,7 @@ export default function Navbar() {
             />
           </Flex>
           <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
-            <Link to="/" style={{textDecoration: 'none'}}>
+            <Link to="/" style={{textDecoration: 'none'}} aria-label="App Title">
               <Flex gap={2}>
                 <Image src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png" alt="Instagram" aria-label="App Logo" />
                 <Text

@@ -68,15 +68,15 @@ export default function LikeDislikeButton({id, isLiked, isDisliked, likeCount, d
     return (
         <Box p={3}>
             <Flex>
-                <IconButton onClick={() => setFillLike(id)} icon={(isLiked && !isDisliked) ? <Icon as={BsHandThumbsUpFill} boxSize={'24px'} color='blue.400'/> : <Icon as={BsHandThumbsUp} boxSize={'24px'} />} variant='ghost'/>
+                <IconButton aria-label="Like Button" onClick={() => setFillLike(id)} icon={(isLiked && !isDisliked) ? <Icon as={BsHandThumbsUpFill} boxSize={'24px'} color='blue.400'/> : <Icon as={BsHandThumbsUp} boxSize={'24px'} />} variant='ghost'/>
                 {/* <IconButton onClick={() => console.log('clicked like')} icon={(isLiked && !isDisliked) ? <Icon as={BsHandThumbsUpFill} boxSize={'24px'} color='blue.400'/> : <Icon as={BsHandThumbsUp} boxSize={'24px'} />} variant='ghost'/> */}
-                <IconButton onClick={() => setFillDislike(id)} icon={(!isLiked && isDisliked) ? <Icon as={BsHandThumbsDownFill} boxSize={'24px'} color='red.400'/> : <Icon as={BsHandThumbsDown} boxSize={'24px'} />} variant='ghost'/>
+                <IconButton aria-label="Dislike Button" onClick={() => setFillDislike(id)} icon={(!isLiked && isDisliked) ? <Icon as={BsHandThumbsDownFill} boxSize={'24px'} color='red.400'/> : <Icon as={BsHandThumbsDown} boxSize={'24px'} />} variant='ghost'/>
             </Flex>
         
             <Flex>
-                <Text fontWeight={'bold'} fontSize={'14px'}>{likeCount} likes </Text>
-                <Text fontWeight={'bold'} fontSize={'14px'} marginLeft={'10px'}>{dislikeCount} dislikes</Text>
-            </Flex>
+                <Text fontWeight={'bold'} fontSize={'14px'} aria-label="Like Count">{likeCount} likes </Text>
+                <Text fontWeight={'bold'} fontSize={'14px'} marginLeft={'10px'} aria-label="Dislike Count">{dislikeCount} dislikes</Text>
+            </Flex> 
         </Box>
     )
 }
