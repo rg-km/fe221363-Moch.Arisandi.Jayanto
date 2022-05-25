@@ -20,8 +20,12 @@ function myPow(x, n) {
     let pow = Math.abs(n);
     
     // TODO: answer here
-    
-    // TODO: answer here
+    if(n > 0) {
+        return myPow(x, pow-1) * x;
+    }
+    else {
+        return 1 / (myPow(x, pow - 1) * x);
+    }
 }
 
 module.exports = { myPow }

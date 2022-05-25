@@ -3,9 +3,18 @@
 module.exports = class Stack {
     constructor() {
         // TODO: answer here
+        this.data = []
+        this.top = -1
+        this.size = 10
     }
 
-    push(elemen) {
+    push(size) {
         // TODO: answer here
+        if(this.data.length == 10) {
+            throw 'stack overflow'
+        } else {
+            this.top ++
+            this.data.push(size)
+        }
     }
 }
