@@ -11,11 +11,41 @@
  * setiap method yang dibuat akan menerima argumen berupa integer
  */
 
-class Calculator {
+ class Calculator {
   constructor (operand) {
     this.operand = operand;
   }
   // TODO: answer here
+  add (num) {
+    this.operand += num;
+    return this;
+  }
+  subtract (num) {
+    this.operand -= num;
+    return this;
+  }
+  multiply (num) {
+    this.operand *= num;
+    return this;
+  }
+  divide (num) {
+    this.operand /= num;
+    return this;
+  }
+  square (num) {
+    this.operand = Math.pow(this.operand, num);
+    return this;
+  }
+  squareRoot (num) {
+    this.operand = Math.sqrt(this.operand);
+    return this;
+  }
+  getValue () {
+    return this.operand;
+  }
 }
 
+const calc = new Calculator(5);
+console.log(calc.add(5).subtract(2).multiply(3).divide(2).square(2).squareRoot().value);
+console.log(calc.getValue());
 module.exports = Calculator
