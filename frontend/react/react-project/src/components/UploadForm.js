@@ -162,6 +162,7 @@ export default function UploadForm({onSubmit, isOpen, onClose}) {
                 </Box>
               </AspectRatio>
               <Input 
+                aria-label="Caption Input"
                 placeholder="Type your caption here" 
                 hidden={file === ''} 
                 value={caption}

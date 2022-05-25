@@ -10,6 +10,7 @@ function App() {
 
   return (
     <div aria-label="App" className='App'>
+      <h1 aria-label="App Title" hidden>Hello World</h1>
       <SessionProvider>
         <Navbar />
         <Container maxW={'container.lg'} p={'2'} flexGrow='1' overflow={'hidden'} display='flex' flexDirection={'column'} justifyContent='center'>
