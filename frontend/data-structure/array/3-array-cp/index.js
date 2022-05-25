@@ -18,12 +18,22 @@ function mostWordsFound(sentences) {
     for (let i = 0; i < sentences.length; i++) {
         let count = countWords(sentences[i]);
         // TODO: answer here
+        if (count > max) {
+            max = count;
+        }
     }
     return max
 }
 
 function countWords(sentence) {
-    return 0; // TODO: replace this
+    let words = sentence.split(" ");
+    let count = 0;
+    for (let i = 0; i < words.length; i++) {
+        if (words[i] !== "") {
+            count++;
+        }
+    }
+    return count;
 }
 
 module.exports = {
