@@ -11,7 +11,6 @@ import {
   Stack,
   Icon,
   useColorModeValue,
-  useBreakpointValue,
   useDisclosure,
   Container,
   Menu,
@@ -121,10 +120,6 @@ export default function Navbar() {
                 </Link>
               </Flex>
             </Link>
-
-            {/* <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
-              <DesktopNav />
-            </Flex> */}
           </Flex>
 
           <Stack
@@ -165,16 +160,5 @@ export default function Navbar() {
         <UploadForm onClose={onCloseAdd} onSubmit={submitPost}/>
       </Modal>
     </Box>
-
-    // <header className="navbar">
-    //   <div className="container d-flex justify-content-between">
-    //     <h1 aria-label="App Title" className="navbar-brand">Instagram Clone</h1>
-    //     <nav>
-    //       <div className="navbar__cta">
-    //         <button className="btn btn-primary" onClick={auth}>Masuk</button>
-    //       </div>
-    //     </nav>
-    //   </div>
-    // </header>
   )
 }

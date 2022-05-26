@@ -10,9 +10,6 @@ import { Modal,
   Text,
   Box,
   FormControl,
-  InputGroup,
-  Icon,
-  InputLeftElement,
   Input,
   Container,
   AspectRatio,
@@ -26,9 +23,7 @@ import { Modal,
   AlertDialogCloseButton,
   AlertDialogBody
  } from "@chakra-ui/react"
-import React, { useEffect, useRef, useState } from "react";
-import Swal from "sweetalert2";
-import { FiUpload } from "react-icons/fi";
+import React, { useEffect, useState } from "react";
 
 const PreviewImage = () => {
   return (
