@@ -122,13 +122,13 @@ export default function UploadForm({onSubmit, isOpen, onClose}) {
                       >
                         <Box height="16" width="12" position="relative" hidden={Boolean(file !== "")}>
                           <PreviewImage
-                            backgroundImage="url('https://user-images.githubusercontent.com/30518462/170499091-2bb9c6c8-2d1a-40d6-b8c7-cd6691043ab5.png')"
+                            backgroundImage="url('https://image.shutterstock.com/image-photo/paella-traditional-classic-spanish-seafood-600w-1662253543.jpg')"
                           />
                           <PreviewImage
-                            backgroundImage="url('https://user-images.githubusercontent.com/30518462/170499091-2bb9c6c8-2d1a-40d6-b8c7-cd6691043ab5.png')"
+                            backgroundImage="url('https://images.unsplash.com/photo-1565299585323-38d6b0865b47?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2628&q=80')"
                           />
                           <PreviewImage
-                            backgroundImage={`url("https://user-images.githubusercontent.com/30518462/170499091-2bb9c6c8-2d1a-40d6-b8c7-cd6691043ab5.png")`}
+                            backgroundImage={`url("https://images.unsplash.com/photo-1563612116625-3012372fccce?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2480&q=80")`}
                           />
                         </Box>
                         <Stack p="8" textAlign="center" spacing="1" hidden={Boolean(file !== "")}>
