@@ -6,9 +6,6 @@ import axios from 'axios'
 import moment from 'moment'
 import { PostContext } from '../context/PostContext'
 
-
-// export const PostContext = createContext([])
-
 function MainMenu() {
     const {postList, setPostList} = useContext(PostContext)
     console.log(postList)
@@ -26,7 +23,6 @@ function MainMenu() {
         }
     }
 
-    // console.log(postList)
     return (
         <>
             <Flex gap={5} flexDirection='column'>

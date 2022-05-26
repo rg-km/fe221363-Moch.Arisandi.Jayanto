@@ -84,7 +84,6 @@ export default function Profile() {
               <Image src={post.image} alt='Content image' />
               <Flex 
                 _hover={{opacity: 1}}
-                // _groupHover={{transform: 'scale(0.5)'}}
                 opacity={0}
                 transition={'.2s'}
                 backgroundColor='rgba(0, 0, 0, 0.5)'
@@ -115,16 +114,6 @@ export default function Profile() {
             <ModalHeader>{getPost.title}</ModalHeader>
             <ModalCloseButton />
             <ModalBody>
-              {/* <Flex flexDirection={"column"}>
-                <Flex direction={"column"} paddingStart={2}>
-                  <Box as={Flex} alignItems="center" gap={3}>
-                    <Avatar name={getPost.author.name} src={getPost.author.image}/>
-                    <Text fontWeight={"bold"}>{getPost.author.name}</Text>
-                  </Box>
-                </Flex>
-                <Image marginY={2} src={getPost.image} alt="Post iamge" />
-
-              </Flex> */}
               <PostCard 
                 avatar={getPost.author.image} 
                 caption={getPost.content}
