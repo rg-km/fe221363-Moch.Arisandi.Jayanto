@@ -1,23 +1,25 @@
 // TODO: answer here
 import Navbar from './components/Navbar'
-import { Container } from '@chakra-ui/react'
-import { SessionProvider } from './context/SessionContext'
+import { Box, Container, Icon, IconButton, Modal, useDisclosure } from '@chakra-ui/react'
 import { Outlet } from 'react-router-dom'
 import "./App.css"
+import UploadForm from './components/UploadForm'
+import { BsPlusSquare } from "react-icons/bs";
+import axios from 'axios'
+import Swal from 'sweetalert2'
+
 
 function App() {
   // TODO: answer here
 
   return (
     <div aria-label="App" className='App'>
-      <h1 aria-label="App Title" hidden>Hello World</h1>
-      <SessionProvider>
-        <Navbar />
-        <Container maxW={'container.lg'} p={'2'} flexGrow='1' overflow={'hidden'} display='flex' flexDirection={'column'} justifyContent='center'>
-          <Outlet />
-        </Container>
+      <Container maxW={'container.lg'} p={'2'} flexGrow='1' overflow={'hidden'} display='flex' flexDirection={'column'} justifyContent='center'>
+        <h1 aria-label="App Title" hidden>Welcome to instagram clone</h1>
         
-      </SessionProvider>
+        
+        <Outlet />
+      </Container>
     </div>
   )
 }
