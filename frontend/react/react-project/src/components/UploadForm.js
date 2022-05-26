@@ -74,6 +74,7 @@ export default function UploadForm({onSubmit, isOpen, onClose}) {
   } 
   return (
     <>
+    <form aria-label="Upload Form">
       <ModalOverlay />
       <ModalContent>
         <ModalHeader border={'1px'} borderColor={"gray.200"}><Text align={"center"}>Create new post</Text></ModalHeader>
@@ -150,7 +151,8 @@ export default function UploadForm({onSubmit, isOpen, onClose}) {
                       left="0"
                       opacity="0"
                       aria-hidden="true"
-                      accept="image/*"
+                      accept=".jpg, .png, .gif"
+                      aria-label="Image Input"
                       // value={file}
                     />
                   </Box>
@@ -167,7 +169,7 @@ export default function UploadForm({onSubmit, isOpen, onClose}) {
         </ModalBody>
 
         <ModalFooter>
-          <Button onClick={postContent} variant='solid' colorScheme={"messenger"}>Post</Button>
+          <Button onClick={postContent} variant='solid' colorScheme={"messenger"} aria-label="Submit Button">Post</Button>
         </ModalFooter>
 
         <AlertDialog
@@ -186,6 +188,7 @@ export default function UploadForm({onSubmit, isOpen, onClose}) {
           </AlertDialogContent>
         </AlertDialog>
       </ModalContent>
+      </form>
     </>
   )
 }
