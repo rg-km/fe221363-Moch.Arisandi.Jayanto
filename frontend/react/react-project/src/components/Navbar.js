@@ -51,7 +51,7 @@ export default function Navbar() {
         setSession(data.user)
         setUser(data.user)
       }
-      // else window.location.assign('http://localhost:3000/login')
+      else {window.location.assign('http://localhost:3000/login')}
     }
     catch(error) {
       console.log(error)
