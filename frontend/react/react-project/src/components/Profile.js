@@ -73,7 +73,7 @@ export default function Profile() {
             boxSize='150px'/>
         </Flex>
         <Box flexGrow={1}>
-          <Text as={'h1'} fontSize='2xl'>{name.name}</Text>
+          <Text fontWeight={'bold'} as={'h1'} fontSize='2xl'>{name.name}</Text>
         </Box>
       </Flex>
       <Divider mt={5} mb={5}/>
@@ -114,7 +114,7 @@ export default function Profile() {
             <ModalHeader>{getPost.title}</ModalHeader>
             <ModalCloseButton />
             <ModalBody>
-              <PostCard 
+              <PostCard
                 avatar={getPost.author.image} 
                 caption={getPost.content}
                 date={moment(getPost.createdAt).fromNow()}

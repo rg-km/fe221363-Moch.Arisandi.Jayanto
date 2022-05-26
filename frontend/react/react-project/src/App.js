@@ -9,7 +9,7 @@ function App() {
   return (
     <div aria-label="App" className='App'>
         <Container maxW={'container.lg'} p={'2'} flexGrow='1' overflow={'hidden'} display='flex' flexDirection={'column'} justifyContent='center'>
-          <h1 aria-label="App Title" hidden>Welcome to instagram clone</h1>
+          <h1 aria-label="App Title" hidden>Instagram clone</h1>
           <Outlet />
         </Container>
     </div>
