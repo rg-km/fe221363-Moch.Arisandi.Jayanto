@@ -9,6 +9,9 @@ const PlanetDetail = () => {
   // TODO: answer here
   const controller = new AbortController();
 
+  const { id } = useParams();
+
+
   const loadDetail = async () => {
     setLoading(true);
     try {
@@ -17,6 +20,7 @@ const PlanetDetail = () => {
         signal: controller.signal,
       });
       // TODO: answer here
+      setDetail(data);
     } catch (error) {
       console.log(error);
     }
@@ -25,6 +29,7 @@ const PlanetDetail = () => {
 
   useEffect(() => {
     // TODO: answer here
+    loadDetail();
     return () => {
       controller.abort();
     };
