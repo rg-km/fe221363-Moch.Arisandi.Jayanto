@@ -5,6 +5,7 @@ import { HStack, Input, Button } from "@chakra-ui/react"
 export default function AddTodo() {
   // TODO: answer here
 
+  const { addTodo } = useTodoStore()
   const [text, setText] = useState("")
   const handleSubmit = (e) => {
     e.preventDefault()

@@ -3,6 +3,9 @@ import { HStack, Text, Button } from "@chakra-ui/react"
 
 export default function TodoItem({ id, text, isDone }) {
   // TODO: answer here
+  // Item component for showing the todo text, deleting todo, toggling todo(done/not) \
+
+  const { removeTodo, toggleTodo } = useTodoStore()
 
   return (
     <HStack justify="space-between" width="full">
