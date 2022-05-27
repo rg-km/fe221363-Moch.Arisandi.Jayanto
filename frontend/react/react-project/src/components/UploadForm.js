@@ -40,7 +40,7 @@ const PreviewImage = () => {
       backgroundSize="cover"
       backgroundRepeat="no-repeat"
       backgroundPosition="center"
-      backgroundImage={`url("https://image.shutterstock.com/image-photo/paella-traditional-classic-spanish-seafood-600w-1662253543.jpg")`}
+      backgroundImage={`url("https://user-images.githubusercontent.com/30518462/170499091-2bb9c6c8-2d1a-40d6-b8c7-cd6691043ab5.png")`}
     />
   );
 }
@@ -153,7 +153,6 @@ export default function UploadForm({onSubmit, isOpen, onClose}) {
                       aria-hidden="true"
                       accept=".jpg, .png, .gif"
                       aria-label="Image Input"
-                      // value={file}
                     />
                   </Box>
                 </Box>

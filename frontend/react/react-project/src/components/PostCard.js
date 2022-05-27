@@ -15,7 +15,7 @@ export default function PostCard({ image, caption, username, avatar, userId, dat
           </Link>
       </Box>
       <Box maxH='767px' borderBottom='1px' borderTop='1px' borderColor={'gray.100'}>
-        <Image src={image} margin='auto' aria-label="Post Image"/>
+        <Image maxH='760px' align={'center'} src={image} margin='auto' aria-label="Post Image"/>
       </Box>
       <Box p={3}>
         <Text as={'p'} fontWeight={'bold'}>{username} <Text as='span' fontWeight={'normal'} aria-label="Post Caption">{caption}</Text></Text>
